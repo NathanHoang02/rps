@@ -1,0 +1,123 @@
+ let computerScore = 0;
+    let humanScore = 0;
+    
+         function getHumanChoice()
+        {
+            let user = prompt("Choose: Rock, Paper or Scissors");
+            if (user === "rock")
+            {
+                alert(`Player entered: ${user}`);
+            } 
+            else if( user === "paper")
+            {
+                alert(`Player entered: ${user}`);
+            } 
+            else if (user === "scissors")
+            {
+                alert(`Player entered: ${user}`);
+            }
+          
+            return user;
+
+            
+        }
+
+        function getComputerChoice()
+        {
+            let result;
+            let random = Math.floor(Math.random() * 3) + 1;
+
+            if (random === 1)
+            {
+                result = "rock";
+            } 
+            else if (random === 2)
+            {
+                result = "paper";
+            } 
+            else if(random === 3)
+            {
+                result = "scissors";
+            }
+            return result;
+        }
+        
+        function playGame()
+        {
+            function playRound(humanChoice, computerChoice)
+            {
+                let humanChoosed = humanChoice.toLowerCase();
+                if (humanChoosed === "rock" && computerChoice === "scissors")
+                {
+                    alert("You Win! Rock beats Scissors");
+                    return humanScore++;
+                } 
+                else if (humanChoosed === "paper" && computerChoice === "rock")
+                {
+                    alert("You Win! Paper beats Rock");
+                    return humanScore++;
+                } 
+                else if (humanChoosed === "scissors" && computerChoice === "paper")
+                {
+                    alert("You Win! Scissors beats Paper");
+                    return humanScore++;
+                } 
+                else if (computerChoice === "rock" && humanChoosed === "scissors")
+                {
+                    alert("You Lose! Computer Wins! Rock beats Scissors");
+                    return computerScore++;
+                } 
+                else if (computerChoice === "paper" && humanChoosed === "rock")
+                {
+                    alert("You Lose! Computer Wins! Paper beats Rock");
+                    return computerScore++;
+                } 
+                else if (computerChoice === "scissors" && humanChoosed === "paper")
+                {
+                    alert("You Lose! Computer Wins! Scissors beats Paper");
+                    return computerScore++;
+                }
+                else if (humanChoosed === "rock" && computerChoice === "rock")
+                {
+                    alert("It's a Draw! Both Drew Rock" );
+                }
+                else if (humanChoosed === "paper" && computerChoice === "paper")
+                {
+                    alert("It's a Draw! Both Drew Paper" );
+                }
+                else if (humanChoosed === "scissors" && computerChoice === "scissors")
+                {
+                    alert("It's a Draw! Both Drew Scissors");
+                }    
+            }
+            
+          for (let i = 1; i < 6; i++) 
+          {
+                const humanSelection = getHumanChoice();
+                const computerSelection = getComputerChoice();
+                
+                playRound(humanSelection, computerSelection);
+                if (i === 5)
+                {
+                    if(humanScore > computerScore)
+                    {
+                        alert("You Won! Player Wins!");
+                    } 
+                    else if(computerScore > humanScore)
+                    {
+                        alert("You Lose! Computer Wins!");
+                    }
+                    else if (humanScore === computerScore)
+                    {
+                        alert("Draw!");
+                    }
+                }
+                alert(`HumanScore: ${humanScore} : Computer: ${computerScore}`);
+            }
+            window.location.reload();
+        }
+        
+       
+
+            
+    playGame(2);
