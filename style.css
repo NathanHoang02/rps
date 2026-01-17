@@ -1,0 +1,99 @@
+html
+{
+    background-color: gray;
+    color: white; 
+    font-family: sans-serif;
+}
+
+.inputs,
+.logs,
+.log-item, 
+.log-winner-player,
+.log-winner-computer,
+.log-winner-draw {
+  display: flex;
+  align-items: center;
+}
+
+.container,
+.log,
+.log-items,
+.log-winners {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.container {
+  margin: 16px 32px;
+}
+
+.inputs {
+  justify-content: space-around;
+  width: 50%;
+}
+
+.option {
+  margin: 10px;
+  width: 125px;
+  transition: all .07s ease;
+}
+
+.option:hover {
+  margin: 0px;
+  width: 135px;
+}
+
+.pressed {
+  transform: scale(1.1);
+  background-color: darkmagenta;
+  box-shadow: 0 0 1rem darkviolet;
+}
+
+.log {
+  margin-top: 24px;
+  padding: 24px;
+  border: solid 1px black;
+  width: 50rem;
+  background-color: navy;
+}
+
+.logs {
+  justify-content: center;
+  gap: 14rem;
+}
+
+.log-items,
+.log-winners {
+  gap: 2rem;
+}
+
+.log-item, 
+.log-winner-player,
+.log-winner-computer,
+.log-winner-draw {
+  height: 60px;
+}
+
+.log-winner-player,
+.player-good {
+  color: greenyellow;
+}
+
+.log-winner-computer,
+.computer-bad {
+  color: salmon;
+}
+
+.log-winner-draw {
+  color: Lightgray;
+}
+
+.reset-button {
+  background-color: darkblue;
+  color: White;
+  border: 1px solid Black;
+  border-radius: 8px;
+  padding: 8px 46px;
+  font-weight: bold;
+}
